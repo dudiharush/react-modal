@@ -1,0 +1,86 @@
+{
+  "name": "@dudiharush/react-modal",
+  "main": "dist/cjs/index.js",
+  "module": "dist/ejs/index.js",
+  "version": "1.0.56",
+  "description": "React Modal With Hooks",
+  "types": "dist/types/ReactModal/CustomIcon.d.ts",
+  "keywords": [
+    "react custom modal",
+    "react modal",
+    "use modal"
+  ],
+  "dependencies": {},
+  "peerDependencies": {
+    "react": "^16.11.0",
+    "react-dom": "^16.11.0"
+  },
+  "devDependencies": {
+    "@types/node": "12.11.7",
+    "@types/react": "16.9.11",
+    "@types/react-dom": "16.9.3",
+    "@typescript-eslint/eslint-plugin": "^2.34.0",
+    "@typescript-eslint/parser": "^3.3.0",
+    "eslint": "^6.6.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "husky": "^3.0.9",
+    "lint-staged": "^9.4.2",
+    "prettier": "^2.0.5",
+    "react": "^16.11.0",
+    "react-dom": "^16.11.0",
+    "react-scripts": "^3.4.1",
+    "rollup": "^1.23.0",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-terser": "^5.1.2",
+    "rollup-plugin-typescript": "^1.0.1",
+    "rollup-plugin-typescript2": "^0.24.3",
+    "tslib": "^1.10.0",
+    "typescript": "^3.9.5"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "prepublish": "npm run build && npm version patch",
+    "build:web": "react-scripts build",
+    "build": "rollup -c && npm run build:types",
+    "build:types": "tsc -p tsconfig.types-gen.js",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "lint:fix": "eslint src/ --ext .tsx,.ts,.js --fix"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "files": [
+    "dist"
+  ],
+  "author": "David Harush",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dudiharush/react-modal.git"
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "yarn run lint:fix",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  }
+}
