@@ -1,13 +1,13 @@
 import { useState } from 'react'
 import * as React from 'react'
-import { ModalContentType, ModalContext, ModalContextType, WithHideModal } from './ModalContext'
+import { ModalContentType, ModalContext, ModalContextType, ModalOwnProps } from './ModalContext'
 import { Modal } from './Modal'
 
 export interface ModalProviderProps {
   children: React.ReactElement
 }
 
-export function ModalProvider<P extends WithHideModal>({ children }: ModalProviderProps) {
+export function ModalProvider<P extends ModalOwnProps>({ children }: ModalProviderProps) {
   const [modal, setModal] = useState<ModalContentType<P>>()
 
   function removeModal() {
