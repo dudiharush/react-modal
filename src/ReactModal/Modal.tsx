@@ -32,21 +32,21 @@ export const Modal = ({ open, handleClose, children }: ModalProps) => {
             left: 0,
             height: '100%',
             width: '100%',
-            padding: '100px',
             backgroundColor: 'rgba(0,0,0,0.6)',
           }}
         >
-          <p
+          <div
             onClick={(e) => e.stopPropagation()}
             style={{
-              width: '50%',
-              background: 'white',
-              padding: '50px',
-              textAlign: 'center',
+              position: 'absolute',
+              float: 'left',
+              left: '50%',
+              top: '50%',
+              transform: 'translate(-50%, -50%)',
             }}
           >
             {children}
-          </p>
+          </div>
         </div>,
         el,
       )
