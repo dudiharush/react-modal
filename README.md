@@ -14,7 +14,6 @@ import * as React from "react";
 import { ModalProvider } from "@dudiharush/react-modal";
 
 // step 1: use ModalProvider
-const rootElement = document.getElementById('root')
 render(
   <ModalProvider>
     <App />
