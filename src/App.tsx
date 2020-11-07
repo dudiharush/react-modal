@@ -1,7 +1,8 @@
 import * as React from 'react'
+import { ModalOwnProps } from './ReactModal/ModalContext'
 import { useModal } from './ReactModal/useModal'
 
-const MyModal = ({ hideModal }: any) => (
+const MyModal = ({ hideModal }: ModalOwnProps) => (
   <div style={{ backgroundColor: 'red' }}>
     <div>modal content</div>
     <button
