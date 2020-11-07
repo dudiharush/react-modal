@@ -1,5 +1,5 @@
 {
-  "name": "@dudiharush/react-modal1",
+  "name": "@dudiharush/react-modal",
   "main": "dist/cjs/index.js",
   "module": "dist/ejs/index.js",
   "version": "1.0.31",
