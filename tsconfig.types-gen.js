@@ -22,7 +22,7 @@
     "emitDeclarationOnly": true
   },
   "include": [
-    "src/ReactModal/*"
+    "src/exports/*"
   ],
   "exclude": [
     "node_modules"

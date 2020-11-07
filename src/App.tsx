@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { useModal } from './ReactModal/useModal'
+import { useModal } from '@dudiharush/react-modal'
 
 const useMyModal = () => {
   const { showModal, hideModal } = useModal(() => (

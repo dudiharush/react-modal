@@ -1,16 +1,18 @@
 {
-  "name": "@dudiharush/react-modal",
+  "name": "@dudiharush/react-modal1",
   "main": "dist/cjs/index.js",
   "module": "dist/ejs/index.js",
   "version": "1.0.28",
   "description": "React Modal With Hooks",
-  "types": "dist/types/ReactModal/CustomIcon.d.ts",
+  "types": "dist/types/ReactModal/",
   "keywords": [
     "react custom modal",
     "react modal",
     "use modal"
   ],
-  "dependencies": {},
+  "dependencies": {
+    "@dudiharush/react-modal": "^1.0.28"
+  },
   "peerDependencies": {
     "react": "^16.11.0",
     "react-dom": "^16.11.0"
