@@ -1,20 +1,27 @@
 import { useContext, useEffect, useState, useCallback, useRef, FunctionComponent } from 'react'
-import { ModalContext, ModalOwnProps } from './ModalContext'
+import { ModalContext } from './ModalContext'
 
-export const useModal = <P>(component: FunctionComponent<P & ModalOwnProps>): { showModal: (props?: P) => void } => {
+export const useModal = <P>(
+  component: FunctionComponent<P>,
+): { showModal: (props?: P) => void; hideModal: () => void } => {
   const context = useContext(ModalContext)
   const contentRef = useRef(component)
   const [modalProps, setModalProps] = useState<P>()
-  const showModal = useCallback((props?: P) => {
-    const x = props || {}
-    setModalProps(x as any)
+
+  const showModal = useCallback((props: P = {} as P) => {
+    setModalProps(props)
   }, [])
+
+  const hideModal = useCallback(() => {
+    setModalProps(undefined)
+  }, [])
+
   const isShown = modalProps !== undefined
 
   useEffect(() => {
     if (isShown) {
       context.setModal({
-        component: contentRef.current as FunctionComponent<P & ModalOwnProps>,
+        component: contentRef.current as FunctionComponent<P>,
         props: modalProps,
       })
     } else {
@@ -22,5 +29,5 @@ export const useModal = <P>(component: FunctionComponent<P & ModalOwnProps>): { 
     }
   }, [isShown, context, modalProps])
 
-  return { showModal }
+  return { showModal, hideModal }
 }

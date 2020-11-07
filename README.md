@@ -22,11 +22,14 @@ render(
 )
 
   // step 2: use useModal and its return function: showModal(props)
-  import { useModal, ModalOwnProps } from "@dudiharush/react-modal";
+  import { useModal } from "@dudiharush/react-modal";
 
-  const ModalContent = (({ hideModal }): ModalOwnProps) => <div>modal title<button>{hideModal}</button></div>
+  const useModalContent = {
+    const {showModal, hideModal} = useModal(props => <div>{props.title}<button>{hideModal}</button></div>
+    return showModal;
+  }
 
-  const { showModal } = useModal(ModalContent)
+  const showModal = useModalContent()
   return (
     <button
       onClick={() => {

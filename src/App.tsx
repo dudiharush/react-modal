@@ -1,22 +1,24 @@
 import * as React from 'react'
-import { ModalOwnProps } from './ReactModal/ModalContext'
 import { useModal } from './ReactModal/useModal'
 
-const MyModal = ({ hideModal }: ModalOwnProps) => (
-  <div style={{ backgroundColor: 'red' }}>
-    <div>modal content</div>
-    <button
-      onClick={() => {
-        hideModal()
-      }}
-    >
-      close
-    </button>
-  </div>
-)
+const useMyModal = () => {
+  const { showModal, hideModal } = useModal(() => (
+    <div style={{ backgroundColor: 'red' }}>
+      <div>modal content</div>
+      <button
+        onClick={() => {
+          hideModal()
+        }}
+      >
+        close
+      </button>
+    </div>
+  ))
+  return showModal
+}
 
 const Comp = () => {
-  const { showModal } = useModal(MyModal)
+  const showModal = useMyModal()
   return (
     <button
       onClick={() => {

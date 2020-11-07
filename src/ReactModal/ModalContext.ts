@@ -1,13 +1,9 @@
 import * as React from 'react'
 import { FunctionComponent } from 'react'
 
-export type ModalContentType<P extends ModalOwnProps> = { component: FunctionComponent<P>; props?: P }
+export type ModalContentType<P> = { component: FunctionComponent<P>; props?: P }
 
-export type ModalOwnProps = {
-  hideModal(): void
-}
-
-export type ModalContextType<P extends ModalOwnProps> = {
+export type ModalContextType<P> = {
   setModal: (modalContent: ModalContentType<P>) => void
   removeModal: () => void
 }
