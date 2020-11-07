@@ -42,7 +42,6 @@
     "start": "react-scripts start",
     "prepublish": "npm run build && npm version patch",
     "build:web": "react-scripts build",
-    "publish": "npm publish --access public",
     "build": "rollup -c && npm run build:types",
     "build:types": "tsc -p tsconfig.types-gen.js",
     "test": "react-scripts test",
