@@ -4,7 +4,7 @@
   "module": "dist/ejs/index.js",
   "version": "1.0.37",
   "description": "React Modal With Hooks",
-  "types": "dist/types/exports/index.d.ts",
+  "types": "dist/types/index.d.ts",
   "keywords": [
     "react custom modal",
     "react modal",
