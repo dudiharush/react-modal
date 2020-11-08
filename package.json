@@ -2,7 +2,7 @@
   "name": "@dudiharush/react-modal",
   "main": "dist/cjs/index.js",
   "module": "dist/ejs/index.js",
-  "version": "1.0.37",
+  "version": "1.0.38",
   "description": "React Modal With Hooks",
   "types": "dist/types/index.d.ts",
   "keywords": [
