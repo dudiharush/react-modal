@@ -21,11 +21,11 @@ render(
   rootElement,
 )
 
-  // step 2: use useModal and its return function: showModal(props)
+  // step 2: use useModal and its return functions: showModal(props), hideModal()
   import { useModal } from "@dudiharush/react-modal";
 
   const useModalContent = {
-    const {showModal, hideModal} = useModal(props => <div>{props.title}<button>{hideModal}</button></div>
+    const {showModal, hideModal} = useModal(props => <div>{props.title}<button onClick={()=>{ hideModal(); }>close</button></div>
     return showModal;
   }
 
