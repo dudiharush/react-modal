@@ -10,9 +10,6 @@
     "react modal",
     "use modal"
   ],
-  "dependencies": {
-    "@dudiharush/react-modal": "^1.0.28"
-  },
   "peerDependencies": {
     "react": "^16.11.0",
     "react-dom": "^16.11.0"
