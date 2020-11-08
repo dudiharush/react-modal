@@ -7,7 +7,6 @@
       "esnext"
     ],
     "rootDir": "src",
-    "outFile": "./dist/types/index.d.ts",
     "skipLibCheck": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
@@ -19,10 +18,11 @@
     "outDir": "./dist",
     "jsx": "react",
     "declaration": true,
+    "declarationDir": "./dist/types",
     "emitDeclarationOnly": true
   },
   "include": [
-    "src/ReactModal/*"
+    "src/exports/*"
   ],
   "exclude": [
     "node_modules"
