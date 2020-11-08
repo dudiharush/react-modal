@@ -5,6 +5,7 @@
 /.pnp
 .pnp.js
 *.tgz
+*.log
 settings.json
 
 # testing
