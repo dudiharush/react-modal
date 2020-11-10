@@ -22,6 +22,8 @@ render(
 )
 
  // step 2: create modal component and call useModalActions()
+ import { useModalActios } from "@dudiharush/react-modal";
+
 const MyModalContent = ({ title }) => {
   const { hideModal } = useModalActios();
   return (
@@ -31,7 +33,7 @@ const MyModalContent = ({ title }) => {
     </div>
   )
 }
-  // step 3: Create a custom hook that shows your modal:
+  // step 3: create a custom hook that shows your modal:
   import { useModal } from "@dudiharush/react-modal";
 
   const useMyModalContent = {
@@ -39,7 +41,7 @@ const MyModalContent = ({ title }) => {
     return showModal;
   }
 
-// step 4: Call your custom modal hook and use its returned "showModal" function:
+// step 4: call your custom modal hook and use its returned "showModal" function:
   const showModal = useMyModalContent()
   return (
     <button
