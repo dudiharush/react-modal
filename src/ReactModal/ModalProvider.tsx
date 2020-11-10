@@ -11,6 +11,7 @@ export function ModalProvider<P>({ children }: ModalProviderProps) {
   const [modal, setModal] = useState<ModalContentType<P>>()
 
   function removeModal() {
+    debugger
     setModal(undefined)
   }
 
@@ -26,10 +27,12 @@ export function ModalProvider<P>({ children }: ModalProviderProps) {
 
   return (
     <>
-      <ModalContext.Provider value={contextValue}>{children}</ModalContext.Provider>
-      <Modal open={open} handleClose={removeModal}>
-        <>{modal && <modal.component {...(modal.props as P)} />}</>
-      </Modal>
+      <ModalContext.Provider value={contextValue}>
+        {children}
+        <Modal open={open} handleClose={removeModal}>
+          <>{modal && <modal.component {...(modal.props as P)} />}</>
+        </Modal>
+      </ModalContext.Provider>
     </>
   )
 }

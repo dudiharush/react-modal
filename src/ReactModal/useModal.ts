@@ -7,21 +7,29 @@ export const useModal = <P>(
   const context = useContext(ModalContext)
   const contentRef = useRef(component)
 
-  const showModal = useCallback((props: P = {} as P) => {
-    context.setModal({
-      component: contentRef.current as FunctionComponent<P>,
-      props,
-    })
-  }, [])
+  const showModal = useCallback(
+    (props: P = {} as P) => {
+      context.setModal({
+        component: contentRef.current as FunctionComponent<P>,
+        props,
+      })
+    },
+    [context],
+  )
 
   const hideModal = useCallback(() => {
     context.removeModal?.()
-  }, [])
+  }, [context])
 
   return { showModal, hideModal }
 }
 
 export const useModalActios = () => {
   const context = useContext(ModalContext)
-  return { hideModal: () => context.removeModal?.() }
+  return {
+    hideModal: () => {
+      debugger
+      context.removeModal?.()
+    },
+  }
 }

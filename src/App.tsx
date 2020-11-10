@@ -4,6 +4,7 @@ import { useModal, useModalActios } from './ReactModal/useModal'
 type MyModalContentProps = {
   title: string
 }
+
 const MyModalContent = ({ title }: MyModalContentProps) => {
   const { hideModal } = useModalActios()
   return (
@@ -14,13 +15,13 @@ const MyModalContent = ({ title }: MyModalContentProps) => {
           hideModal()
         }}
       >
-        close{' '}
+        close
       </button>
     </div>
   )
 }
 const useMyModal = () => {
-  const { showModal, hideModal } = useModal(MyModalContent)
+  const { showModal } = useModal((props: MyModalContentProps) => <MyModalContent {...props} />)
   return showModal
 }
 

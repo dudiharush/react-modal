@@ -31,15 +31,16 @@ const MyModalContent = ({ title }) => {
     </div>
   )
 }
-  // step 3: use useModal and its return functions: showModal(props)
+  // step 3: Create a custom hook that shows your modal:
   import { useModal } from "@dudiharush/react-modal";
 
-  const useModalContent = {
+  const useMyModalContent = {
     const { showModal } = useModal(MyModalContent)
     return showModal;
   }
 
-  const showModal = useModalContent()
+// step 4: Call your custom modal hook and use its returned "showModal" function:
+  const showModal = useMyModalContent()
   return (
     <button
       onClick={() => {

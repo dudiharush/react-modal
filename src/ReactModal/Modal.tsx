@@ -1,4 +1,4 @@
-import React, { PropsWithChildren, useEffect, useRef } from 'react'
+import React, { PropsWithChildren, useEffect } from 'react'
 import { createPortal } from 'react-dom'
 
 type ModalProps = PropsWithChildren<{
@@ -7,7 +7,6 @@ type ModalProps = PropsWithChildren<{
 }>
 
 export const Modal = ({ open, handleClose, children }: ModalProps) => {
-  const ref = useRef<HTMLHeadingElement>(null)
   const el = React.useMemo(() => document.createElement('div'), [])
 
   useEffect(() => {
@@ -23,7 +22,6 @@ export const Modal = ({ open, handleClose, children }: ModalProps) => {
     ? createPortal(
         <div
           onClick={() => {
-            debugger
             handleClose()
           }}
           style={{
