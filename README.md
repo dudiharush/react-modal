@@ -21,11 +21,21 @@ render(
   rootElement,
 )
 
-  // step 2: use useModal and its return functions: showModal(props), hideModal()
+ // step 2: create modal component and call useModalActions()
+const MyModalContent = ({ title }) => {
+  const { hideModal } = useModalActios();
+  return (
+    <div>
+      <div>{title}</div>
+      <button onClick={() => hideModal() }>close</button>
+    </div>
+  )
+}
+  // step 3: use useModal and its return functions: showModal(props)
   import { useModal } from "@dudiharush/react-modal";
 
   const useModalContent = {
-    const {showModal, hideModal} = useModal(props => <div>{props.title}<button onClick={()=>{ hideModal(); }>close</button></div>
+    const { showModal } = useModal(MyModalContent)
     return showModal;
   }
 

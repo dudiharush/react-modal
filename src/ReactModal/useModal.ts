@@ -20,3 +20,8 @@ export const useModal = <P>(
 
   return { showModal, hideModal }
 }
+
+export const useModalActios = () => {
+  const context = useContext(ModalContext)
+  return { hideModal: () => context.removeModal?.() }
+}

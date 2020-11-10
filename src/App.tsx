@@ -1,19 +1,26 @@
 import * as React from 'react'
-import { useModal } from '@dudiharush/react-modal'
+import { useModal, useModalActios } from './ReactModal/useModal'
 
-const useMyModal = () => {
-  const { showModal, hideModal } = useModal(() => (
+type MyModalContentProps = {
+  title: string
+}
+const MyModalContent = ({ title }: MyModalContentProps) => {
+  const { hideModal } = useModalActios()
+  return (
     <div style={{ backgroundColor: 'red' }}>
-      <div>modal content</div>
+      <div>{title}</div>
       <button
         onClick={() => {
           hideModal()
         }}
       >
-        close
+        close{' '}
       </button>
     </div>
-  ))
+  )
+}
+const useMyModal = () => {
+  const { showModal, hideModal } = useModal(MyModalContent)
   return showModal
 }
 
@@ -22,7 +29,7 @@ const Comp = () => {
   return (
     <button
       onClick={() => {
-        showModal()
+        showModal({ title: 'my title' })
       }}
     >
       open modal
