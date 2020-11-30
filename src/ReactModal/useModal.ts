@@ -9,7 +9,7 @@ export const useModal = <P>(component: FunctionComponent<P>) => {
     (props: P) => {
       context.setModal({
         component: contentRef.current as FunctionComponent<P>,
-        props,
+        props: props || {},
       })
     },
     [context],
