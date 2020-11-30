@@ -1,21 +1,19 @@
 import { useContext, useCallback, useRef, FunctionComponent } from 'react'
 import { ModalContext } from './ModalContext'
 
-export const useModal = <P>(
-  component: FunctionComponent<P>,
-): { showModal: P extends Record<string, unknown> ? (props: P) => void : () => void; hideModal: () => void } => {
+export const useModal = <P>(component: FunctionComponent<P>) => {
   const context = useContext(ModalContext)
   const contentRef = useRef(component)
 
   const showModal = useCallback(
-    (props: P = {} as P) => {
+    (props: P) => {
       context.setModal({
         component: contentRef.current as FunctionComponent<P>,
         props,
       })
     },
     [context],
-  )
+  ) as P extends Record<string, unknown> ? (props: P) => void : () => void
 
   const hideModal = useCallback(() => {
     context.removeModal?.()

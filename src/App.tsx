@@ -21,7 +21,7 @@ const MyModalContent = ({ title }: MyModalContentProps) => {
   )
 }
 const useMyModal = () => {
-  const { showModal } = useModal((props: MyModalContentProps) => <MyModalContent {...props} />)
+  const { showModal } = useModal(MyModalContent)
   return showModal
 }
 
