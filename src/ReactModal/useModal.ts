@@ -3,7 +3,7 @@ import { ModalContext } from './ModalContext'
 
 export const useModal = <P>(
   component: FunctionComponent<P>,
-): { showModal: (props?: P) => void; hideModal: () => void } => {
+): { showModal: P extends Record<string, unknown> ? (props: P) => void : () => void; hideModal: () => void } => {
   const context = useContext(ModalContext)
   const contentRef = useRef(component)
 
