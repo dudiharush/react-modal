@@ -1,7 +1,7 @@
 # react-modal
 
 React Modal With Hooks
-<img src="./logo.png"/>
+<img src="./logo.svg"/>
 
 # installation
 
