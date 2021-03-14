@@ -3,16 +3,15 @@ import { ModalContext } from './ModalContext'
 
 export const useModal = <P>(component: FunctionComponent<P>) => {
   const context = useContext(ModalContext)
-  const contentRef = useRef(component)
 
   const showModal = useCallback(
     (props: P) => {
       context.setModal({
-        component: contentRef.current as FunctionComponent<P>,
+        component,
         props: props || {},
       })
     },
-    [context],
+    [context, component],
   ) as P extends Record<string, unknown> ? (props: P) => void : () => void
 
   const hideModal = useCallback(() => {
@@ -26,7 +25,6 @@ export const useModalActios = () => {
   const context = useContext(ModalContext)
   return {
     hideModal: () => {
-      debugger
       context.removeModal?.()
     },
   }
