@@ -37,7 +37,7 @@ const MyModalContent = ({ title }: { title: string }) => {
 import { useModal } from "@dudiharush/react-modal";
 
 const useMyModalContent = () => {
-  const { showModal }: { showModal: (props: { title: string; }) => void; hideModal: () => void; } = useModal(MyModalContent)
+  const { showModal } = useModal(MyModalContent)
   return showModal
 }
 
