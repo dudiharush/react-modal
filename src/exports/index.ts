@@ -1,2 +1,2 @@
 export { ModalProvider } from '../ReactModal/ModalProvider'
-export { useModal, useModalActios } from '../ReactModal/useModal'
+export { useModal, useModalActions } from '../ReactModal/useModal'

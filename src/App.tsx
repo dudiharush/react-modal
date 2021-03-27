@@ -1,12 +1,12 @@
 import * as React from 'react'
-import { useModal, useModalActios } from './ReactModal/useModal'
+import { useModal, useModalActions } from './ReactModal/useModal'
 
 type MyModalContentProps = {
   title: string
 }
 
 const MyModalContent = ({ title }: MyModalContentProps) => {
-  const { hideModal } = useModalActios()
+  const { hideModal } = useModalActions()
   return (
     <div style={{ backgroundColor: 'red' }}>
       <div>{title}</div>

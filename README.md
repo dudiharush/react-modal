@@ -21,10 +21,10 @@ render(
 )
 
 // step 2: create modal component and call useModalActions()
-import { useModalActios } from "@dudiharush/react-modal";
+import { useModalActions } from "@dudiharush/react-modal";
 
 const MyModalContent = ({ title }: { title: string }) => {
-  const { hideModal } = useModalActios()
+  const { hideModal } = useModalActions()
   return (
     <div>
       <div>{title}</div>
@@ -53,3 +53,4 @@ const showModal = useMyModalContent()
     </button>
 }
 ```
+````
