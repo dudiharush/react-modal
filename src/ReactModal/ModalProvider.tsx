@@ -11,7 +11,6 @@ export function ModalProvider<P>({ children }: ModalProviderProps) {
   const [modal, setModal] = useState<ModalContentType<P>>()
 
   function removeModal() {
-    debugger
     setModal(undefined)
   }
 
